@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>eCommerce</title>
+    <!-- Style -->
+    <link rel="stylesheet" href="style/style.css">
+    <!-- favIcon -->
+    <link rel="icon" href="assets/favicon.ico">
+    <!-- Script -->
+    <script src="script/script.js" defer></script>
+    <!-- FontAwesome icons -->
+    <script src="https://kit.fontawesome.com/52f4839422.js" crossorigin="anonymous"></script>
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <script src='assets/bootstrap/js/bootstrap.min.js'></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Nunito&family=Press+Start+2P&family=Righteous&family=Roboto+Condensed&family=Ubuntu&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="info d-flex gap-2 align-items-center" id="alert-msg"><i class="fa-solid fa-circle-info"></i> <span>This is an alert msg.</span></div>
+   <div class="dialogWindow ps-4 pe-4 pb-3 text-start bg-dark text-white rounded-4 d-none">
+    <div class="dialog-header d-flex pt-3 justify-content-between mb-4 bg-dark sticky-top">
+      <div class="dialog-title">
+        <h4>dialog Title</h4>
+      </div>
+      <span id="dialog-exit"><i class="fa-regular fa-circle-xmark"></i></span>
+    </div>
+    <div class="dialog-body pb-4">
+    </div>
+    <div class="dialog-footer text-center">
+    </div>
+   </div>
+   <div id="overlay" class="d-none"></div>
+   <header>
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-lg">
+            <div class="container">
+                <a href="" class="navbar-brand order-2 order-lg-first ms-md-auto text-black">eCommerce</a>
+                <button class="navbar-toggler order-first" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                  <i class="fa-solid fa-bars"></i>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                  <ul class="navbar-nav">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle text-black" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                          Categories
+                        </a>
+                        <ul class="dropdown-menu categoriesList" id="navCategories">
+                        </ul>
+                      </li>
+                    <li class="nav-item">
+                        <a href="#offers-section" class="nav-link text-black">Deals</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#newArrivals-section" class="nav-link text-black">What's new  </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#contact" class="nav-link text-black">Contact</a>
+                    </li>   
+                </ul>
+                </div>
+                <form class="d-flex align-items-center input-box order-last order-md-3 me-md-5 ms-auto me-auto mt-3 mt-md-0" role="search">
+                    <input type="text" required id="search-input" name="search">
+                    <div class="dropdown categoriesMenu">
+                        <button class="dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                         All
+                        </button>
+                        <ul class="dropdown-menu categoriesList" id="searchCategories">
+                        </ul>
+                      </div>
+                    <span>Search</span>
+                    <i class="fa-solid fa-magnifying-glass searchBtn"></i>
+                  </form>
+                  <div class="navActions d-flex gap-2 order-3 order-md-last">
+                    <!-- <button class="btn btn-outline-secondary"><i class="fa-solid fa-user"></i> Account</button> -->
+                    <div class="dropdown">
+                      <button class="btn btn-outline-secondary"><i class="fa-solid fa-user"></i> <span class="d-none d-lg-inline">Account</span></button> 
+                      <div class="dropdown-content">
+                        <a href="#">Profile</a>
+                        <a href="#">Wishlist</a>
+                        <a href="#">Edit Profile</a>
+                        <a href="#">Help</a>
+                        <a href="#" class="logout-item">Logout</a>
+                      </div>
+                    </div>
+                    <div class="shoppingCart">
+                      <span class="badge" id="numOf-cartItems">0</span>
+                      <button class="btn btn-outline-secondary" id="shopping-cart-btn"><i class="fa-solid fa-cart-shopping"></i> <span class="d-none d-lg-inline">Cart</span></button>
+                    </div>
+                  </div>
+            </div>
+        </nav>
+        <!-- Header -->
+        <div class="homeHeader  text-white ">
+          <div class="container bg-dark rounded-3 shadow-lg p-3 ps-5 pe-5">
+            <div id="headerCarousel" class="carousel slide"  data-bs-ride="carousel">
+              <div class="carousel-indicators">
+                <button type="button" data-bs-target="#headerCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#headerCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#headerCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+              </div>
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="row align-items-center">
+                      <div class="col-lg-6 text-lg-start text-center mb-3 mb-lg-0">
+                        <h1>testing an eCommerce site.</h1>
+                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Commodi pariatur et in neque dolorum assumenda, sit sequi optio nostrum. Consectetur iusto id in? Impedit, harum!</p>
+                        <button class="btn btn-outline-secondary">Shop now</button>
+                      </div>
+                      <div class="col-lg-6">
+                        <img src="assets/images/headphonegirl.png" class="img-fluid d-block w-100" alt="">
+                      </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                  <div class="row align-items-center">
+                    <div class="col-lg-6 text-lg-start text-center mb-5 mb-lg-0">
+                      <h1>testing an eCommerce site.</h1>
+                      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Commodi pariatur et in neque dolorum assumenda, sit sequi optio nostrum. Consectetur iusto id in? Impedit, harum!</p>
+                      <button class="btn btn-outline-secondary">Shop now</button>
+                    </div>
+                    <div class="col-lg-6">
+                      <img src="assets/images/greyhoodie.png" class="img-fluid d-block w-100" alt="">
+                    </div>
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <div class="row align-items-center">
+                    <div class="col-lg-6 text-lg-start text-center mb-4 mb-lg-0">
+                      <h1>testing an eCommerce site.</h1>
+                      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Commodi pariatur et in neque dolorum assumenda, sit sequi optio nostrum. Consectetur iusto id in? Impedit, harum!</p>
+                      <button class="btn btn-outline-secondary">Shop now</button>
+                    </div>
+                    <div class="col-lg-6">
+                      <img src="assets/images/airjordan.png" class="img-fluid d-block w-100" alt="">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    </header>
+    <main>
+      <!-- about us -->
+      <div class="section about-us pt-4 pb-4">
+        <div class="container">
+          <div class="row text-center">
+            <div class="col-4">
+              <img src='assets/images/delivery.png' alt="">
+            <h5>Fast delivery.</h5>
+            </div>
+            <div class="col-4">
+              <img src='assets/images/exchange.png' alt="">
+              <h5>Exchange products.</h5>
+            </div>
+            <div class="col-4">
+              <img src='assets/images/refund.png' alt="">
+              <h5>30 days return & refund.</h5>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="main-page">
+      <!-- Top products -->
+      <div class="section pt-4 pb-4" id="topProducts-section">
+        <div class="sectionTitle text-center pb-3">
+          <h3>Top Products</h3>
+        </div>
+        <div class="container">
+          <div class="row products-wrapper" id="topProducts-row">
+          </div>
+        </div>
+      </div>
+      <!-- Offers -->
+      <div class="section pt-4 pb-4" id="offers-section">
+        <div class="sectionTitle text-center pb-3">
+          <h3>Offers</h3>
+        </div>
+        <div class="container">
+          <div class="row products-wrapper" id="offers-row">
+          </div>
+        </div>
+      </div>
+      <!-- New Arrivals -->
+      <div class="section pt-4 pb-4" id="newArrivals-section">
+        <div class="sectionTitle text-center pb-4">
+          <h3>New Arrivals</h3>
+        </div>
+        <div class="container">
+          <div class="row products-wrapper" id="newArrivals-row">
+          </div>
+        </div>
+      </div>
+      </div>
+    </main>
+    <footer class="bg-dark text-white pt-5 pb-3 text-center text-lg-start" id="contact">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-3 pb-3 pb-lg-0">
+            <h4>Our store</h4>
+            <div class="location-info d-flex flex-column gap-2">
+              <h6><i class="fa-solid fa-location-dot"></i> 343 st. Nasr City, Cairo, Egypt.</h6>
+              <h6><i class="fa-solid fa-phone"></i> [+20] 1002494719</h6>
+              <h6><i class="fa-solid fa-phone"></i> [+20] 1100494735</h6>
+              <h6><i class="fa-solid fa-envelope"></i> maghTech@eCommerce.com</h6>
+            </div>
+          </div>
+          <div class="col-lg-3 order-last order-lg-2 pt-3 pt-lg-0">
+            <h4>Social</h4>
+            <div class="social-links d-flex gap-3 justify-content-center justify-content-lg-start">
+              <a href="#"><i class="fa-brands fa-facebook fa-2x"></i></a>
+              <a href="#"><i class="fa-brands fa-instagram fa-2x"></i></a>
+              <a href="#"><i class="fa-brands fa-twitter fa-2x"></i></a>
+              <a href="#"><i class="fa-brands fa-youtube fa-2x"></i></a>
+            </div>
+          </div>
+          <div class="col-lg-3 col-6">
+            <h4>Products</h4>
+            <a href="#"><h6><i class="fa-solid fa-chevron-right"></i> Top products</h6></a>
+            <a href="#"><h6><i class="fa-solid fa-chevron-right"></i> Special offers</h6></a>
+            <a href="#"><h6><i class="fa-solid fa-chevron-right"></i> New Arrivals</h6></a>
+          </div>
+          <div class="col-lg-3 col-6">
+            <h4>Your account</h4>
+            <a href="#"><h6><i class="fa-solid fa-chevron-right"></i> Orders</h6></a>
+            <a href="#"><h6><i class="fa-solid fa-chevron-right"></i> Wishlist</h6></a>
+            <a href="#"><h6><i class="fa-solid fa-chevron-right"></i> My cart</h6></a>
+            <a href="#"><h6><i class="fa-solid fa-chevron-right"></i> Addresses</h6></a>
+            <a href="#"><h6><i class="fa-solid fa-chevron-right"></i> Vouchers</h6></a>
+            <a href="#"><h6><i class="fa-solid fa-chevron-right"></i> My alerts</h6></a>
+          </div>
+        </div>
+        <div class="copyright text-center fw-bold pt-5">
+          <h6>© 2023 - all rights reserved by <span>MaghTech</span></h6>
+        </div>
+      </div>
+    </footer>
+</body>
+</html>
