@@ -233,7 +233,7 @@ class Product{
 
 
 const productsList = [
-    new Product('Denim Jacket','Blue loose fit denim jacket.',499,categories.clothing,'denimJacket.png',4,643,false),
+    new Product('Denim Jacket','Blue loose fit denim jacket.',499,categories.clothing,'denimjacket.png',4,643,false),
     new Product('Air Jordan','Black and white Air Jordan.',899,categories.clothing,'airjordan.png',5,1241,false),
     new Product('Gaming Headset','Gaming headset with a microphone.',699,categories.technology,'gamingheadset.png',5,3343,false),
     new Product('Gaming chair','Black and red comfortable gaming chair.',2499,categories.furniture,'gamingchair.png',5,4302,false),
